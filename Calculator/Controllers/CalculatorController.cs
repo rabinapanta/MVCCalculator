@@ -44,7 +44,13 @@ public class CalculatorController : Controller
 
         return View();
     }
-
+    [HttpPost]
+    public IActionResult ClearHistory()
+    {
+        // Clear the history
+        _history.Clear();
+        return RedirectToAction("Index");
+    }
     private string GetSymbol(string op) => op switch
     {
         "Add" => "+",
