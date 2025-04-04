@@ -21,16 +21,22 @@
             right: 1rem;
         }
 
-            .theme-toggle .form-check-input {
-                width: 2rem;
-                height: 2rem;
-            }
+        .theme-toggle .form-check-input {
+            width: 2rem;
+            height: 2rem;
+        }
 
-            .theme-toggle .form-check-label {
-                font-size: 1.5rem;
+        .theme-toggle .form-check-label {
+            font-size: 1.5rem;
+        }
         .history-box {
             max-height: 150px;
             overflow-y: auto;
+        }
+
+        .operation-select {
+            width: 4rem; 
+            text-align: center;
         }
     </style>
 </head>
@@ -39,7 +45,7 @@
         <div class="theme-toggle">
             <div class="form-check form-switch">
                 <input class="form-check-input" type="checkbox" id="themeSwitch">
-                <label class="form-check-label" for="themeSwitch">🌗Theme</label>
+                <label class="form-check-label" for="themeSwitch">🌗Change Theme</label>
             </div>
         </div>
 
@@ -51,8 +57,8 @@
                     <input type="number" name="number1" class="form-control" placeholder="First number" value="@number1">
                 </div>
 
-                <div class="col-4">
-                    <select name="operation" class="form-select">
+                <div class="col-auto">
+                    <select name="operation" class="form-select operation-select ">
                         <option value="Add" selected="@(selectedOperation == "Add")">+</option>
                         <option value="Subtract" selected="@(selectedOperation == "Subtract")">-</option>
                         <option value="Multiply" selected="@(selectedOperation == "Multiply")">×</option>
