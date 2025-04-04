@@ -1,9 +1,9 @@
 ﻿@{
     ViewData["Title"] = "MVC Calculator";
-    string resultMessage = ViewBag.Result as string;
+    string resultMessage = ViewBag.Result as string ?? string.Empty;
+    string selectedOperation = ViewBag.Operation as string ?? string.Empty;
     double? number1 = ViewBag.Number1 as double?;
     double? number2 = ViewBag.Number2 as double?;
-    string selectedOperation = ViewBag.Operation as string;
     List<string> history = ViewBag.History as List<string> ?? new List<string>();
 }
 
@@ -20,6 +20,14 @@
             top: 1rem;
             right: 1rem;
         }
+
+            .theme-toggle .form-check-input {
+                width: 2rem;
+                height: 2rem;
+            }
+
+            .theme-toggle .form-check-label {
+                font-size: 1.5rem;
         .history-box {
             max-height: 150px;
             overflow-y: auto;
@@ -45,10 +53,10 @@
 
                 <div class="col-4">
                     <select name="operation" class="form-select">
-                        <option value="Add" @(selectedOperation == "Add" ? "selected" : "")>+</option>
-                        <option value="Subtract" @(selectedOperation == "Subtract" ? "selected" : "")>-</option>
-                        <option value="Multiply" @(selectedOperation == "Multiply" ? "selected" : "")>×</option>
-                        <option value="Divide" @(selectedOperation == "Divide" ? "selected" : "")>÷</option>
+                        <option value="Add" selected="@(selectedOperation == "Add")">+</option>
+                        <option value="Subtract" selected="@(selectedOperation == "Subtract")">-</option>
+                        <option value="Multiply" selected="@(selectedOperation == "Multiply")">×</option>
+                        <option value="Divide" selected="@(selectedOperation == "Divide")">÷</option>
                     </select>
                 </div>
 
